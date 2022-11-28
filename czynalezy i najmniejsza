@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+bool czynalezy(vector<int>tab,int element) {
+    for (int i = 0;i < tab.size();i++) {
+        if (tab[i] == element) {
+            return true;
+        }
+    }
+    return false;
+}
+int min(vector<int>tab) {
+    int min = tab[0];
+    for (int i = 1;i < tab.size();i++) {
+        if (min > tab[i]) {
+            min = tab[i];
+        }
+    }
+    return min;
+
+}
+int main()
+{
+    vector<int>tab = { 2,5,4,6,9 };
+    int element = 55;
+    int wynik = czynalezy(tab, element);
+    if (wynik == 1) {
+        cout << "nalezy"<<endl;
+    }
+    else {
+        cout << "nie nalezy"<<endl;
+    }
+    int najmniejsza = min(tab);
+    cout << "najmniejsza=" << najmniejsza;
+}
